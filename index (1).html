@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>影视数据筛选器</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div>
+        <h1>中外影视演员与作品多语言查询平台</h1>
+        <p>通过剧名或演员名字搜索影视作品，支持互联网影视数据库检索。</p>
+      </div>
+    </header>
+
+    <section class="search-panel">
+      <div class="search-box">
+        <label for="searchInput">搜索剧名 / 演员</label>
+        <input id="searchInput" type="text" placeholder="输入剧名或演员名字，例如：Breaking Bad / 吴京" />
+      </div>
+      <div class="filters">
+        <div class="filter">
+          <label for="regionFilter">地区</label>
+          <select id="regionFilter">
+            <option value="">全部地区</option>
+            <option value="中国">中国</option>
+            <option value="美国">美国</option>
+            <option value="英国">英国</option>
+            <option value="韩国">韩国</option>
+            <option value="日本">日本</option>
+            <option value="印度">印度</option>
+            <option value="泰国">泰国</option>
+          </select>
+        </div>
+        <div class="filter">
+          <label for="typeFilter">类型</label>
+          <select id="typeFilter">
+            <option value="">全部类型</option>
+            <option value="电视剧">电视剧</option>
+            <option value="电影">电影</option>
+            <option value="动画">动画</option>
+            <option value="纪录片">纪录片</option>
+          </select>
+        </div>
+        <div class="filter">
+          <label for="yearFilter">年代</label>
+          <select id="yearFilter">
+            <option value="">全部年代</option>
+            <option value="1970s">1970s</option>
+            <option value="1990s">1990s</option>
+            <option value="2000s">2000s</option>
+            <option value="2010s">2010s</option>
+            <option value="2020s">2020s</option>
+          </select>
+        </div>
+        <div class="filter">
+          <label for="nationalityFilter">国籍</label>
+          <select id="nationalityFilter">
+            <option value="">全部国籍</option>
+            <option value="中国">中国</option>
+            <option value="美国">美国</option>
+            <option value="英国">英国</option>
+            <option value="韩国">韩国</option>
+            <option value="日本">日本</option>
+            <option value="印度">印度</option>
+            <option value="泰国演员">泰国演员</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="results-panel">
+      <div class="results-header">
+        <div>
+          <h2>查询结果</h2>
+          <div id="searchStatus" class="search-status">正在准备搜索...</div>
+        </div>
+        <span id="resultCount">0 条结果</span>
+      </div>
+      <div id="resultsList" class="results-list"></div>
+    </section>
+
+    <footer class="app-footer">
+      <p>请通过 <code>npm start</code> 启动本地服务，并配置 TMDB/OMDB API Key，以支持真实互联网查询。</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
